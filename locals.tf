@@ -1,19 +1,19 @@
 locals {
-
   eks_oidc_issuer_url  = var.eks_oidc_provider != null ? var.eks_oidc_provider : replace(data.aws_eks_cluster.eks_cluster.identity[0].oidc[0].issuer, "https://", "")
   eks_cluster_endpoint = var.eks_cluster_endpoint != null ? var.eks_cluster_endpoint : data.aws_eks_cluster.eks_cluster.endpoint
+  eks_cluster_version  = var.eks_cluster_version != null ? var.eks_cluster_version : data.aws_eks_cluster.eks_cluster.version
 
-#   # Configuration for managing add-ons via ArgoCD.
-#   argocd_addon_config = {
-#     awsForFluentBit           = var.enable_aws_for_fluentbit ? module.aws_for_fluent_bit[0].argocd_gitops_config : null
-#     awsLoadBalancerController = var.enable_aws_load_balancer_controller ? module.aws_load_balancer_controller[0].argocd_gitops_config : null
-#     certManager               = var.enable_cert_manager ? module.cert_manager[0].argocd_gitops_config : null
-#     clusterAutoscaler         = var.enable_cluster_autoscaler ? module.cluster_autoscaler[0].argocd_gitops_config : null
-#     ingressNginx              = var.enable_ingress_nginx ? module.ingress_nginx[0].argocd_gitops_config : null
-#     metricsServer             = var.enable_metrics_server ? module.metrics_server[0].argocd_gitops_config : null
-#     externalDns               = var.enable_external_dns ? module.external_dns[0].argocd_gitops_config : null
-#     externalSecrets           = var.enable_external_secrets ? module.external_secrets[0].argocd_gitops_config : null
-#   }
+  #   # Configuration for managing add-ons via ArgoCD.
+  #   argocd_addon_config = {
+  #     awsForFluentBit           = var.enable_aws_for_fluentbit ? module.aws_for_fluent_bit[0].argocd_gitops_config : null
+  #     awsLoadBalancerController = var.enable_aws_load_balancer_controller ? module.aws_load_balancer_controller[0].argocd_gitops_config : null
+  #     certManager               = var.enable_cert_manager ? module.cert_manager[0].argocd_gitops_config : null
+  #     clusterAutoscaler         = var.enable_cluster_autoscaler ? module.cluster_autoscaler[0].argocd_gitops_config : null
+  #     ingressNginx              = var.enable_ingress_nginx ? module.ingress_nginx[0].argocd_gitops_config : null
+  #     metricsServer             = var.enable_metrics_server ? module.metrics_server[0].argocd_gitops_config : null
+  #     externalDns               = var.enable_external_dns ? module.external_dns[0].argocd_gitops_config : null
+  #     externalSecrets           = var.enable_external_secrets ? module.external_secrets[0].argocd_gitops_config : null
+  #   }
 
   addon_context = {
     aws_caller_identity_account_id = data.aws_caller_identity.current.account_id

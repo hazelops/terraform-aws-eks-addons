@@ -45,24 +45,30 @@ variable "eks_cluster_endpoint" {
   default     = null
 }
 
+variable "eks_cluster_version" {
+  description = "The Kubernetes version for the cluster"
+  type        = string
+  default     = null
+}
+
 variable "custom_image_registry_uri" {
   description = "Custom image registry URI map of `{region = dkr.endpoint }`"
   type        = map(string)
   default     = {}
 }
 
-# #-----------CLUSTER AUTOSCALER ADDON-------------
-# variable "enable_cluster_autoscaler" {
-#   description = "Enable Cluster autoscaler add-on"
-#   type        = bool
-#   default     = false
-# }
-#
-# variable "cluster_autoscaler_helm_config" {
-#   description = "Cluster Autoscaler Helm Chart config"
-#   type        = any
-#   default     = {}
-# }
+#-----------CLUSTER AUTOSCALER ADDON-------------
+variable "enable_cluster_autoscaler" {
+  description = "Enable Cluster autoscaler add-on"
+  type        = bool
+  default     = false
+}
+
+variable "cluster_autoscaler_helm_config" {
+  description = "Cluster Autoscaler Helm Chart config"
+  type        = any
+  default     = {}
+}
 
 #-----------External DNS ADDON-------------
 variable "enable_external_dns" {
@@ -108,74 +114,74 @@ variable "external_dns_route53_zone_arns" {
 #   default     = {}
 # }
 
-# #-----------AWS LB Ingress Controller ADDON-------------
-# variable "enable_aws_load_balancer_controller" {
-#   description = "Enable AWS Load Balancer Controller add-on"
-#   type        = bool
-#   default     = false
-# }
-#
-# variable "aws_load_balancer_controller_helm_config" {
-#   description = "AWS Load Balancer Controller Helm Chart config"
-#   type        = any
-#   default     = {}
-# }
-#
-# #-----------NGINX ADDON-------------
-# variable "enable_ingress_nginx" {
-#   description = "Enable Ingress Nginx add-on"
-#   type        = bool
-#   default     = false
-# }
-#
-# variable "ingress_nginx_helm_config" {
-#   description = "Ingress Nginx Helm Chart config"
-#   type        = any
-#   default     = {}
-# }
+#-----------AWS LB Ingress Controller ADDON-------------
+variable "enable_aws_load_balancer_controller" {
+  description = "Enable AWS Load Balancer Controller add-on"
+  type        = bool
+  default     = false
+}
 
-# #-----------AWS FOR FLUENT BIT ADDON-------------
-# variable "enable_aws_for_fluentbit" {
-#   description = "Enable AWS for FluentBit add-on"
-#   type        = bool
-#   default     = false
-# }
-#
-# variable "aws_for_fluentbit_helm_config" {
-#   description = "AWS for FluentBit Helm Chart config"
-#   type        = any
-#   default     = {}
-# }
-#
-# variable "aws_for_fluentbit_irsa_policies" {
-#   description = "Additional IAM policies for a IAM role for service accounts"
-#   type        = list(string)
-#   default     = []
-# }
-#
-# variable "aws_for_fluentbit_create_cw_log_group" {
-#   description = "Set to false to use existing CloudWatch log group supplied via the cw_log_group_name variable."
-#   type        = bool
-#   default     = true
-# }
-#
-# variable "aws_for_fluentbit_cw_log_group_name" {
-#   description = "FluentBit CloudWatch Log group name"
-#   type        = string
-#   default     = null
-# }
-#
-# variable "aws_for_fluentbit_cw_log_group_retention" {
-#   description = "FluentBit CloudWatch Log group retention period"
-#   type        = number
-#   default     = 90
-# }
-#
-# variable "aws_for_fluentbit_cw_log_group_kms_key_arn" {
-#   description = "FluentBit CloudWatch Log group KMS Key"
-#   type        = string
-#   default     = null
-# }
+variable "aws_load_balancer_controller_helm_config" {
+  description = "AWS Load Balancer Controller Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+#-----------NGINX ADDON-------------
+variable "enable_ingress_nginx" {
+  description = "Enable Ingress Nginx add-on"
+  type        = bool
+  default     = false
+}
+
+variable "ingress_nginx_helm_config" {
+  description = "Ingress Nginx Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+#-----------AWS FOR FLUENT BIT ADDON-------------
+variable "enable_aws_for_fluentbit" {
+  description = "Enable AWS for FluentBit add-on"
+  type        = bool
+  default     = false
+}
+
+variable "aws_for_fluentbit_helm_config" {
+  description = "AWS for FluentBit Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+variable "aws_for_fluentbit_irsa_policies" {
+  description = "Additional IAM policies for a IAM role for service accounts"
+  type        = list(string)
+  default     = []
+}
+
+variable "aws_for_fluentbit_create_cw_log_group" {
+  description = "Set to false to use existing CloudWatch log group supplied via the cw_log_group_name variable."
+  type        = bool
+  default     = true
+}
+
+variable "aws_for_fluentbit_cw_log_group_name" {
+  description = "FluentBit CloudWatch Log group name"
+  type        = string
+  default     = null
+}
+
+variable "aws_for_fluentbit_cw_log_group_retention" {
+  description = "FluentBit CloudWatch Log group retention period"
+  type        = number
+  default     = 90
+}
+
+variable "aws_for_fluentbit_cw_log_group_kms_key_arn" {
+  description = "FluentBit CloudWatch Log group KMS Key"
+  type        = string
+  default     = null
+}
 
 #-----------CERT MANAGER ADDON-------------
 variable "enable_cert_manager" {
