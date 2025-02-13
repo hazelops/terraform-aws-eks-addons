@@ -101,18 +101,18 @@ variable "external_dns_route53_zone_arns" {
   default     = []
 }
 
-# #-----------METRIC SERVER ADDON-------------
-# variable "enable_metrics_server" {
-#   description = "Enable metrics server add-on"
-#   type        = bool
-#   default     = false
-# }
-#
-# variable "metrics_server_helm_config" {
-#   description = "Metrics Server Helm Chart config"
-#   type        = any
-#   default     = {}
-# }
+#-----------METRIC SERVER ADDON-------------
+variable "enable_metrics_server" {
+  description = "Enable metrics server add-on"
+  type        = bool
+  default     = false
+}
+
+variable "metrics_server_helm_config" {
+  description = "Metrics Server Helm Chart config"
+  type        = any
+  default     = {}
+}
 
 #-----------AWS LB Ingress Controller ADDON-------------
 variable "enable_aws_load_balancer_controller" {
@@ -280,4 +280,97 @@ variable "argocd_manage_add_ons" {
   description = "Enable managing add-on configuration via ArgoCD App of Apps"
   type        = bool
   default     = false
+}
+
+#-----------TETRATE ISTIO-------------
+variable "enable_tetrate_istio" {
+  description = "Enable Tetrate Istio add-on"
+  type        = bool
+  default     = false
+}
+
+variable "tetrate_istio_distribution" {
+  description = "Istio distribution"
+  type        = string
+  default     = "TID"
+}
+
+variable "tetrate_istio_version" {
+  description = "Istio version"
+  type        = string
+  default     = ""
+}
+
+variable "tetrate_istio_install_base" {
+  description = "Install Istio `base` Helm Chart"
+  type        = bool
+  default     = true
+}
+
+variable "tetrate_istio_install_cni" {
+  description = "Install Istio `cni` Helm Chart"
+  type        = bool
+  default     = true
+}
+
+variable "tetrate_istio_install_istiod" {
+  description = "Install Istio `istiod` Helm Chart"
+  type        = bool
+  default     = true
+}
+
+variable "tetrate_istio_install_gateway" {
+  description = "Install Istio `gateway` Helm Chart"
+  type        = bool
+  default     = true
+}
+
+variable "tetrate_istio_base_helm_config" {
+  description = "Istio `base` Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+variable "tetrate_istio_cni_helm_config" {
+  description = "Istio `cni` Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+variable "tetrate_istio_istiod_helm_config" {
+  description = "Istio `istiod` Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+variable "tetrate_istio_gateway_helm_config" {
+  description = "Istio `gateway` Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+#---------Certificate Manager For Istio Mesh-----
+variable "enable_cert_manager_istio_csr" {
+  description = "Enable Cert Manager istio-csr add-on"
+  type        = bool
+  default     = false
+}
+
+variable "cert_manager_istio_csr_helm_config" {
+  description = "Cert Manager Istio CSR Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+#-----------Datadog Operator-------------
+variable "enable_datadog_operator" {
+  description = "Enable Datadog Operator add-on"
+  type        = bool
+  default     = false
+}
+
+variable "datadog_operator_helm_config" {
+  description = "Datadog Operator Helm Chart config"
+  type        = any
+  default     = {}
 }

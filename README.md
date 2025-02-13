@@ -93,3 +93,8 @@ EKS Cluster addons
 | <a name="output_external_dns"></a> [external\_dns](#output\_external\_dns) | Map of attributes of the Helm release and IRSA created |
 | <a name="output_external_secrets"></a> [external\_secrets](#output\_external\_secrets) | Map of attributes of the Helm release and IRSA created |
 <!-- END_TF_DOCS -->
+
+ 
+## Third-Party Acknowledgments.
+This project is derived from ["terraform-aws-eks-blueprints" module](https://github.com/aws-ia/terraform-aws-eks-blueprints), which is
+licensed under the Apache License 2.0. All original copyright notices from that module have been retained as required.
