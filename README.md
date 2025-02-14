@@ -1,6 +1,7 @@
 # EKS Cluster Addons
 
-This module was created due to the need for installing EKS cluster addons in the style of the EKS Blueprints addons module, but with addressed issues and resolved limitations.
+This module was created due to the need for installing EKS cluster addons in the style of the EKS Blueprints Addons module, but with addressed issues and resolved limitations. 
+Additionally, it aims to maintain backward compatibility with the original EKS Blueprints Addons module.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
