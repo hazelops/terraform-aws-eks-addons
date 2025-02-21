@@ -104,4 +104,4 @@ Additionally, it aims to maintain backward compatibility with the original EKS B
 
  
 ## Third-Party Acknowledgments.
-This project is derived from ["terraform-aws-eks-blueprints" module](https://github.com/aws-ia/terraform-aws-eks-blueprints), which is
+This project is derived from [terraform-aws-eks-blueprints](https://github.com/aws-ia/terraform-aws-eks-blueprints) version 4, which is licensed under the Apache License 2.0, has copyright 2016-2022 Amazon.com, Inc. or its affiliates.
