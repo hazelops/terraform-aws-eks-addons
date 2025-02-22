@@ -49,10 +49,11 @@ This step is optional but recommended if we want to remove all traces of the old
 
 ##### 3️⃣ Replace Module References
 
-Updatewe Terraform configuration to use this module:
+Update Terraform configuration to use this module:
 ```hcl
 module "terraform_aws_eks_addons" {
-source = "path/to/this/module"
+  # This will be upgraded after release
+source = "<change-this-to-path-to-our-module>"
 cluster_name = var.cluster_name
 addons = var.addons
 }
