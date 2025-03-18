@@ -1,7 +1,7 @@
 #-----------------Kubernetes Add-ons----------------------
 
 module "aws_for_fluent_bit" {
-  source                   = "./aws-for-fluentbit"
+  source                   = "modules/aws-for-fluentbit"
   count                    = var.enable_aws_for_fluentbit ? 1 : 0
   helm_config              = var.aws_for_fluentbit_helm_config
   irsa_policies            = var.aws_for_fluentbit_irsa_policies
@@ -14,7 +14,7 @@ module "aws_for_fluent_bit" {
 }
 
 module "aws_load_balancer_controller" {
-  source            = "./aws-load-balancer-controller"
+  source            = "modules/aws-load-balancer-controller"
   count             = var.enable_aws_load_balancer_controller ? 1 : 0
   helm_config       = var.aws_load_balancer_controller_helm_config
   manage_via_gitops = var.argocd_manage_add_ons
@@ -22,7 +22,7 @@ module "aws_load_balancer_controller" {
 }
 
 module "cert_manager" {
-  source                            = "./cert-manager"
+  source                            = "modules/cert-manager"
   count                             = var.enable_cert_manager ? 1 : 0
   helm_config                       = var.cert_manager_helm_config
   manage_via_gitops                 = var.argocd_manage_add_ons
@@ -35,7 +35,7 @@ module "cert_manager" {
 }
 
 module "external_dns" {
-  source            = "./external-dns"
+  source            = "modules/external-dns"
   count             = var.enable_external_dns ? 1 : 0
   helm_config       = var.external_dns_helm_config
   manage_via_gitops = var.argocd_manage_add_ons
@@ -47,7 +47,7 @@ module "external_dns" {
 }
 
 module "external_secrets" {
-  source                                = "./external-secrets"
+  source                                = "modules/external-secrets"
   count                                 = var.enable_external_secrets ? 1 : 0
   helm_config                           = var.external_secrets_helm_config
   manage_via_gitops                     = var.argocd_manage_add_ons
@@ -58,7 +58,7 @@ module "external_secrets" {
 }
 
 module "cluster_autoscaler" {
-  source              = "./cluster-autoscaler"
+  source              = "modules/cluster-autoscaler"
   count               = var.enable_cluster_autoscaler ? 1 : 0
   eks_cluster_version = local.eks_cluster_version
   helm_config         = var.cluster_autoscaler_helm_config
@@ -67,7 +67,7 @@ module "cluster_autoscaler" {
 }
 
 module "ingress_nginx" {
-  source            = "./ingress-nginx"
+  source            = "modules/ingress-nginx"
   count             = var.enable_ingress_nginx ? 1 : 0
   helm_config       = var.ingress_nginx_helm_config
   manage_via_gitops = var.argocd_manage_add_ons
@@ -76,7 +76,7 @@ module "ingress_nginx" {
 
 module "metrics_server" {
   count             = var.enable_metrics_server ? 1 : 0
-  source            = "./metrics-server"
+  source            = "modules/metrics-server"
   helm_config       = var.metrics_server_helm_config
   manage_via_gitops = var.argocd_manage_add_ons
   addon_context     = local.addon_context
@@ -84,7 +84,7 @@ module "metrics_server" {
 
 module "datadog_operator" {
   count             = var.enable_datadog_operator ? 1 : 0
-  source            = "./datadog-operator"
+  source            = "modules/datadog-operator"
   helm_config       = var.datadog_operator_helm_config
   manage_via_gitops = var.argocd_manage_add_ons
   addon_context     = local.addon_context
@@ -92,7 +92,7 @@ module "datadog_operator" {
 
 module "tetrate_istio" {
   count                = var.enable_tetrate_istio ? 1 : 0
-  source               = "./tetrate-istio"
+  source               = "modules/tetrate-istio"
   distribution         = var.tetrate_istio_distribution
   distribution_version = var.tetrate_istio_version
   install_base         = var.tetrate_istio_install_base

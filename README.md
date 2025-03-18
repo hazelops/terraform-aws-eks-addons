@@ -23,16 +23,16 @@ Additionally, it aims to maintain backward compatibility with the original EKS B
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aws_for_fluent_bit"></a> [aws\_for\_fluent\_bit](#module\_aws\_for\_fluent\_bit) | ./aws-for-fluentbit | n/a |
-| <a name="module_aws_load_balancer_controller"></a> [aws\_load\_balancer\_controller](#module\_aws\_load\_balancer\_controller) | ./aws-load-balancer-controller | n/a |
-| <a name="module_cert_manager"></a> [cert\_manager](#module\_cert\_manager) | ./cert-manager | n/a |
-| <a name="module_cluster_autoscaler"></a> [cluster\_autoscaler](#module\_cluster\_autoscaler) | ./cluster-autoscaler | n/a |
-| <a name="module_datadog_operator"></a> [datadog\_operator](#module\_datadog\_operator) | ./datadog-operator | n/a |
-| <a name="module_external_dns"></a> [external\_dns](#module\_external\_dns) | ./external-dns | n/a |
-| <a name="module_external_secrets"></a> [external\_secrets](#module\_external\_secrets) | ./external-secrets | n/a |
-| <a name="module_ingress_nginx"></a> [ingress\_nginx](#module\_ingress\_nginx) | ./ingress-nginx | n/a |
-| <a name="module_metrics_server"></a> [metrics\_server](#module\_metrics\_server) | ./metrics-server | n/a |
-| <a name="module_tetrate_istio"></a> [tetrate\_istio](#module\_tetrate\_istio) | ./tetrate-istio | n/a |
+| <a name="module_aws_for_fluent_bit"></a> [aws\_for\_fluent\_bit](#module\_aws\_for\_fluent\_bit) | modules/aws-for-fluentbit | n/a |
+| <a name="module_aws_load_balancer_controller"></a> [aws\_load\_balancer\_controller](#module\_aws\_load\_balancer\_controller) | modules/aws-load-balancer-controller | n/a |
+| <a name="module_cert_manager"></a> [cert\_manager](#module\_cert\_manager) | modules/cert-manager | n/a |
+| <a name="module_cluster_autoscaler"></a> [cluster\_autoscaler](#module\_cluster\_autoscaler) | modules/cluster-autoscaler | n/a |
+| <a name="module_datadog_operator"></a> [datadog\_operator](#module\_datadog\_operator) | modules/datadog-operator | n/a |
+| <a name="module_external_dns"></a> [external\_dns](#module\_external\_dns) | modules/external-dns | n/a |
+| <a name="module_external_secrets"></a> [external\_secrets](#module\_external\_secrets) | modules/external-secrets | n/a |
+| <a name="module_ingress_nginx"></a> [ingress\_nginx](#module\_ingress\_nginx) | modules/ingress-nginx | n/a |
+| <a name="module_metrics_server"></a> [metrics\_server](#module\_metrics\_server) | modules/metrics-server | n/a |
+| <a name="module_tetrate_istio"></a> [tetrate\_istio](#module\_tetrate\_istio) | modules/tetrate-istio | n/a |
 
 ## Resources
 
