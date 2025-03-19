@@ -71,7 +71,7 @@ module "eks_cluster" {
 #EKS Cluster Add-ons local
 module "eks_addons" {
   depends_on         = [module.eks_cluster]
-  source             = "./../terraform/terraform-aws-eks-addons"
+  source             = "../"
   eks_cluster_id     = module.eks_cluster.cluster_name
   eks_cluster_domain = var.root_domain_name
 
