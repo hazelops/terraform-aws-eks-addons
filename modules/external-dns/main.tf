@@ -8,7 +8,7 @@ module "helm_addon" {
       name        = local.name
       chart       = local.name
       repository  = "oci://registry-1.docker.io/bitnamicharts"
-      version     = "8.7.1"
+      version     = "9.0.3"
       namespace   = local.name
       values = [
         <<-EOT

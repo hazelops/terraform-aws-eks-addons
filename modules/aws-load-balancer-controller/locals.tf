@@ -7,7 +7,7 @@ locals {
     name        = local.name
     chart       = local.name
     repository  = "https://aws.github.io/eks-charts"
-    version     = "1.11.0"
+    version     = "1.14.0"
     namespace   = "kube-system"
     values      = local.default_helm_values
     description = "aws-load-balancer-controller Helm Chart for ingress resources"
