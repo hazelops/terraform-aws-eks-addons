@@ -1,20 +1,22 @@
 module "helm_addon" {
   source = "../helm-addon"
 
-  # https://github.com/bitnami/charts/blob/main/bitnami/external-dns/Chart.yaml
+  # https://github.com/kubernetes-sigs/external-dns/tree/master/charts/external-dns
   helm_config = merge(
     {
       description = "ExternalDNS Helm Chart"
       name        = local.name
       chart       = local.name
-      repository  = "oci://registry-1.docker.io/bitnamicharts"
-      version     = "9.0.3"
+      repository  = var.ext_dns_repo
+      version     = "1.15.2"
       namespace   = local.name
       values = [
         <<-EOT
-          provider: aws
-          aws:
-            region: ${var.addon_context.aws_region_name}
+          provider:
+            name: aws
+          env:
+            - name: AWS_DEFAULT_REGION
+              value: ${var.addon_context.aws_region_name}
         EOT
       ]
     },

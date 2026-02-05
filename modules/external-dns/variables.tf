@@ -22,9 +22,9 @@ variable "domain_name" {
 }
 
 variable "ext_dns_repo" {
-  description = "Repository for external DNS image"
-  type = string
-  default = "oci://registry-1.docker.io/bitnamicharts"
+  description = "Repository for external DNS Helm chart"
+  type        = string
+  default     = "https://kubernetes-sigs.github.io/external-dns"
 }
 
 

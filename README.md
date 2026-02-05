@@ -12,7 +12,7 @@ Additionally, it aims to maintain backward compatibility with the original EKS B
 | cert-manager | 1.19.3 |
 | cluster-autoscaler | 9.54.1 |
 | datadog-operator | 2.8.5 |
-| external-dns | 9.0.3 |
+| external-dns | 1.15.2 |
 | external-secrets | 0.14.3 |
 | ingress-nginx | 4.12.2 |
 | metrics-server | 3.13.0 |
