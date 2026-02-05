@@ -1,14 +1,29 @@
 # EKS Cluster Addons
 
-This module was created due to the need for installing EKS cluster addons in the style of the EKS Blueprints Addons module, but with addressed issues and resolved limitations. 
+This module was created due to the need for installing EKS cluster addons in the style of the EKS Blueprints Addons module, but with addressed issues and resolved limitations.
 Additionally, it aims to maintain backward compatibility with the original EKS Blueprints Addons module.
+
+## Addon Versions
+
+| Addon | Chart Version |
+|-------|---------------|
+| aws-for-fluent-bit | 0.1.35 |
+| aws-load-balancer-controller | 1.14.0 |
+| cert-manager | 1.19.3 |
+| cluster-autoscaler | 9.54.1 |
+| datadog-operator | 2.8.5 |
+| external-dns | 1.15.2 |
+| external-secrets | 0.14.3 |
+| ingress-nginx | 4.12.2 |
+| metrics-server | 3.13.0 |
+| tetrate-istio | 1.23.5 |
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.6 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.7 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.84 |
 | <a name="requirement_time"></a> [time](#requirement\_time) | >= 0.8 |
 
@@ -16,8 +31,8 @@ Additionally, it aims to maintain backward compatibility with the original EKS B
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.84 |
-| <a name="provider_time"></a> [time](#provider\_time) | >= 0.8 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.30.0 |
+| <a name="provider_time"></a> [time](#provider\_time) | 0.13.1 |
 
 ## Modules
 

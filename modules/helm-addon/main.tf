@@ -15,7 +15,7 @@ resource "helm_release" "addon" {
   repository_username        = try(var.helm_config["repository_username"], "")
   repository_password        = try(var.helm_config["repository_password"], "")
   verify                     = try(var.helm_config["verify"], false)
-  keyring = length(lookup(var.helm_config, "keyring", "")) > 0 ? var.helm_config["keyring"] : null
+  keyring                    = length(lookup(var.helm_config, "keyring", "")) > 0 ? var.helm_config["keyring"] : null
   disable_webhooks           = try(var.helm_config["disable_webhooks"], false)
   reuse_values               = try(var.helm_config["reuse_values"], false)
   reset_values               = try(var.helm_config["reset_values"], false)
